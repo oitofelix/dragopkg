@@ -35,7 +35,7 @@ DragoPKG package management system_.
 __Table of contents__
 
 1. [The kingdom of packages: DragoPKG package dynamics](dragopkg/specification.html#the-kingdom-of-packages-dragopkg-package-dynamics)
-
+2. [The Fate of The Knights --- The maintainer's role](dragopkg/specification.html#the-fate-of-the-knights--the-maintainers-role)
 
 ### The kingdom of packages: DragoPKG package dynamics
 
@@ -188,10 +188,11 @@ the distribution specific conventions.
 
 
 
-## The Fate of The Knights --- The maintainer's role ##
+### The Fate of The Knights --- The maintainer's role ###
 
-           "... be brave, be brief, be strong, be gentle"
-     	                	  -- Chidragoli, the old sage
+> ... be brave, be brief, be strong, be gentle
+>
+> --- Chidragoli, the old sage
 
 The heavy, technical and centralized work inside a DragoPKG based
 distribution is on source package maintainer's shoulders.  They need
