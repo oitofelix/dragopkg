@@ -6,7 +6,7 @@ tags: >
 license: CC BY-SA 4.0
 layout: oitofelix-homepage
 base: http://oitofelix.github.io
-base_local: http://localhost:4000
+#base_local: http://localhost:4000
 ---
 <div id="markdown" markdown="1">
 ## DragoPKG specification
@@ -34,7 +34,7 @@ DragoPKG package management system_.
 
 __Table of contents__
 
-1. [The kingdom of packages: DragoPKG package dynamics](#the-kingdom-of-packages-dragopkg-package-dynamics)
+1. [The kingdom of packages: DragoPKG package dynamics]({{ page.base_local }}{{ site.baseurl }}#the-kingdom-of-packages-dragopkg-package-dynamics)
 
 
 ### The kingdom of packages: DragoPKG package dynamics
@@ -722,7 +722,7 @@ database (collection) of meta-data cache directories with that special
 ## The Dragorian List --- The User's Connection with Repositories ##
 
       "... all our souls are linked altogether, dragorian-listed to
-      reach the sacred packages..." 
+      reach the sacred packages..."
 			         -- Niphydracia, the reptilian fairy
 
 All information regarding the repositories of source and live packages
@@ -800,7 +800,7 @@ actions as long it does not modify their nature.
 For instance, to install the bash local package
 bash-4.2p14-program-i486.tlz one would use:
 
-pkg install bash-4.2p14-program-i486.tlz 
+pkg install bash-4.2p14-program-i486.tlz
 
 But to show what system files would be overwritten if it were
 installed we use:
