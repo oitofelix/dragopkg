@@ -34,7 +34,7 @@ DragoPKG package management system_.
 
 __Table of contents__
 
-1. [The kingdom of packages: DragoPKG package dynamics]({{ page.base_local }}{{ site.baseurl }}#the-kingdom-of-packages-dragopkg-package-dynamics)
+1. [The kingdom of packages: DragoPKG package dynamics](dragopkg/specification.html#the-kingdom-of-packages-dragopkg-package-dynamics)
 
 
 ### The kingdom of packages: DragoPKG package dynamics
