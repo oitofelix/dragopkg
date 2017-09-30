@@ -12,8 +12,7 @@ base: http://oitofelix.github.io
 ## DragoPKG specification
 
 > ... go, mere mortal, and thus you'll find the sacred packages.
->
-> --- Dragomana, the goddess
+>                                     --- Dragomana, the goddess
 
 _DragoPKG_ is a reincarnation of _Dragora's pkgsystem_, written from
 scratch, based on the idea of distributed maintenance, common
