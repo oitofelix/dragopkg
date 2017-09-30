@@ -28,7 +28,7 @@ application: _build process_, _package management_ and _repository
 maintenance_ --- to the workings of community cooperation for the sake
 of distribution.
 
-- [DragoPKG specification](specification.html)
+- [DragoPKG specification]({{ page.base_local }}{{ site.baseurl }}/specification.html)
 - [DragoPKG VCS repository](https://github.com/oitofelix/dragopkg/)
 
 _DragoPKG_ allows the management of remote packages using any protocol
