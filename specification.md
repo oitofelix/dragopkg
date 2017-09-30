@@ -140,7 +140,7 @@ In the executable group we have:
   debug symbols that were striped off from libraries and programs to
   save storage space.
 
-- The __headers live packages___ are packages which contain the
+- The __headers live packages__ are packages which contain the
   library headers used in software development.
 
 The _non-executable group_ does not have sub-classes determined by
@@ -192,50 +192,51 @@ the distribution specific conventions.
 
 > ... be brave, be brief, be strong, be gentle
 >
-> --- Chidragoli, the old sage
+>                 --- Chidragoli, the old sage
 
-The heavy, technical and centralized work inside a DragoPKG based
-distribution is on source package maintainer's shoulders.  They need
-to get the upstream software and couple it with DragoPKG meta-data, in
-particular with a very powerful and handy "build" scripts.  That script
-must know how to generate every meaningful live package sub-class from
-the source package constructed by them.
+The heavy, technical and centralized work inside a _DragoPKG based
+distribution_ is on source package maintainer's shoulders.  They need
+to get the upstream software and couple it with _DragoPKG meta-data_,
+in particular with a very powerful and handy "build" scripts.  That
+script must know how to generate every meaningful live package
+sub-class from the source package constructed by them.
 
-The live package maintainers represent an important role in the
+The _live package maintainers_ represent an important role in the
 process, but their work is not very technical, but rather distributed
 and social.  Their work is not very much technical because they only
-need to type one command to have the desired live package.  Their work
-is distributed because each live package maintainer cares only with
-the live package sub-classes that regards them and, thus, there are
-one or more live package maintainers for each other sub-classes of the
-same software.  Their work is social because they need to cooperate
-with other live package maintainers inside that same package class and
-deal directly with the distribution to users.  One could wonder why
-there are live maintainers, if we can just give the source packages
-right away for the users to make installable live package by
-themselves.  There are a number of reasons for this, among them:
-reduce duplicated work, ease objective reaching, teach the principle
-of good will by peer collaboration and facilitate the initiation on
-the free software distribution process and the workings of community
-cooperation.  Some of these are expressed by the following rhetorical
-questions:
+need to type one command to have the desired _live package_.  Their
+work is distributed because each _live package maintainer_ cares only
+with the _live package sub-classes_ that regards them and thus there
+are one or more _live package maintainers_ for each other sub-classes
+of the same software.  Their work is social because they need to
+cooperate with other _live package maintainers_ inside that same
+package class and deal directly with the distribution to users.  One
+could wonder why there are _live maintainers_, if we can just give the
+source packages right away for the users to make installable _live
+package_ by themselves.  There are a number of reasons for this, among
+them: reduce duplicated work, ease objective reaching, teach the
+principle of good will by peer collaboration and facilitate the
+initiation on the free software distribution process and the workings
+of community cooperation.  Some of these are expressed by the
+following rhetorical questions:
 
--- If someone have already built that package, why should he not
-   collaborate with the community providing his resultant work?
+- If someone have already built that package, why should he not
+  collaborate with the community providing his resultant work?
 
--- If some user need right now get a job done, why should he waste
-   time, space and power fulfilling build requirements, running
-   lengthy compilations and spanning into more problems than they need
-   to, if somebody else have already built the necessary package, and
-   that user can right now start using those precious resources to do
-   his own computing and, possibly, to benefit the community earlier?
+- If some user need right now get a job done, why should he waste
+  time, space and power fulfilling build requirements, running lengthy
+  compilations and spanning into more problems than they need to, if
+  somebody else have already built the necessary package, and that
+  user can right now start using those precious resources to do his
+  own computing and (possibly) be able to benefit the community
+  earlier?
 
--- Why not give people the tools they need to help their neighbors
-   without sacrificing much of themselves and making them feeling an
-   important part of a whole?
+- Why not give people the tools they need to help their neighbors
+  without sacrificing much of themselves and making them feeling an
+  important part of a whole?
 
--- Why not build a stronger community, where more people work
-   together and trace, together, the future of their own computing?
+- Why not build a stronger community, where more people work together
+  and trace together the future of their own computing?
 
 
 
