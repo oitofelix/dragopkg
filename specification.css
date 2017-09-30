@@ -1,0 +1,14 @@
+#markdown blockquote {
+    text-align: right;
+    font-style: italic;
+}
+
+#markdown blockquote > p:nth-last-of-type(2) {
+    margin-bottom: 0px;
+}
+
+#markdown blockquote > p:last-of-type {
+    font-style: normal;
+    font-size: small;
+    margin-top: 0px;
+}
