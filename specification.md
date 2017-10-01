@@ -5,7 +5,7 @@ tags: >
   Package manager programming, pkgsystem, pkg, Dragora, Bash, shell script
 license: CC BY-SA 4.0
 layout: oitofelix-homepage
-base: http://oitofelix.github.io
+#base: http://oitofelix.github.io
 #base_local: http://localhost:4000
 ---
 <div id="markdown" markdown="1">
@@ -13,7 +13,7 @@ base: http://oitofelix.github.io
 
 > ... go, mere mortal, and thus you'll find the sacred packages.
 >
->                                    --- Dragomana, the goddess
+> --- Dragomana, the goddess
 
 _DragoPKG_ is a reincarnation of _Dragora's pkgsystem_, written from
 scratch, based on the idea of distributed maintenance, common
@@ -34,10 +34,16 @@ DragoPKG package management system_.
 
 __Table of contents__
 
-1. [The kingdom of packages: DragoPKG package dynamics](dragopkg/specification.html#the-kingdom-of-packages-dragopkg-package-dynamics)
+1. [The kingdom of packages --- DragoPKG package dynamics](dragopkg/specification.html#the-kingdom-of-packages-----dragopkg-package-dynamics)
 2. [The Fate of The Knights --- The maintainer's role](dragopkg/specification.html#the-fate-of-the-knights--the-maintainers-role)
+3. [The Universal Divine Flow --- Distribution Mechanics](dragopkg/specification.html#the-universal-divine-flow-----distribution-mechanics)
+4. [The Nature of The Unknown --- Package Structure and Meta-data](dragopkg/specification.html#the-nature-of-the-unknown-----package-structure-and-meta-data)
+5. [Royalty and Their People --- The System-Administrator and Common Users](dragopkg/specification.html#royalty-and-their-people-----the-system-administrator-and-common-users)
+6. [The Treasure Map --- Packages Database Cache](dragopkg/specification.html#the-treasure-map-----packages-database-cache)
+7. [The Dragorian List --- The User's Connection to Repositories](dragopkg/specification.html#the-dragorian-list-----the-users-connection-with-repositories)
+8. [Class of Magic --- Command Line Interface](dragopkg/specification.html#class-of-magic-----command-line-interface)
 
-### The kingdom of packages: DragoPKG package dynamics
+### The kingdom of packages --- DragoPKG package dynamics
 
 > ... and from source came life!
 >
@@ -46,17 +52,17 @@ __Table of contents__
 There are two kinds of _DragoPKG packages_ (the so called
 "super-classes"): __source__ and __live__.
 
-- The _source package_ is usually what _live package maintainers_ or
-  _hard core users_ want and need; it contains the program's source
+- _Source packages_ are usually what _live package maintainers_ or
+  _hard core users_ want and need; they contain the program's source
   code from the mainstream developers --- possibly with distribution
-  specific patches --- alongside _DragoPKG meta-data_, and is ready to
-  be built for any architecture by a single _DragoPKG_ incantation.
+  specific patches --- alongside _DragoPKG meta-data_, and are ready
+  to be built for any architecture by a single _DragoPKG_ incantation.
   The maintenance of this type of package is entrusted to the _source
   package maintainer_.
 
-- The _live package_ is usually what _common users_ want and need; it
-  contains the software already built from its respective _source
-  package_, alongside _DragoPKG meta-data_, and is ready to be
+- _Live packages_ are usually what _common users_ want and need; they
+  contain the software already built from their respective _source
+  packages_, alongside _DragoPKG meta-data_, and are ready to be
   installed by a single _DragoPKG_ incantation.  The maintenance of
   this type of package is entrusted to the _live package maintainer_.
 
@@ -97,12 +103,12 @@ much because it relies on maps, graphics and sound --- that's to say
 the game's artistic work --- to offer a playable game.  For this,
 there is another upstream package called _Freedoom_ which offers the
 so called _IWAD file_ that contains all such data.  It could be useful
-to combine both upstream packages in a single _DragoPKG source
+to combine both upstream packages into a single _DragoPKG source
 package_, so a playable game can be distributed.  In that case, the
 _PrBoom_ part would be used to make the architecture-dependent _live
-packages_ --- like those belonging to the _program class_ --- and the
+packages_ --- e.g. those belonging to the _program class_ --- and the
 _Freedoom_ part would be used to make the architecture independent
-_live packages_ --- like those belonging to the _data class_.
+_live packages_ --- e.g. those belonging to the _data class_.
 Actually, there are other upstream _IWAD packages_ for the same
 engine, and they could be included along that _DragoPKG source
 package_ in such a way that each _IWAD_ would be placed in a distinct
@@ -118,6 +124,7 @@ _executable live packages_:
 - __arch__: these are executable live packages that have a sub-class
   different from "no-arch" --- built for some specific machine
   architecture.
+
 - __no-arch__: these are executable live packages that have sub-class
   "no-arch" --- they run on any kind of machine without modification
   and are written for interpreters or virtual machines.
@@ -145,61 +152,57 @@ In the executable group we have:
 
 The _non-executable group_ does not have sub-classes determined by
 machine architectures, so they are arch-independent.  Its sub-classes
-are not the same for each particular class, but, likewise _executable
-live packages_, any _non-executable live package_ can belong to more
-than one sub-class in a given class.
+are not the same for each particular class, but like _executable live
+packages_ any _non-executable live package_ can belong to more than
+one sub-class in a given class.
 
-- The __l10n live packages__ are that packages that contain the
-  information pertinent to the localization of a internationalized
-  program.  This class have a set of sub-classes that represent all
-  the human languages: en_US, es_MX, ja_JP, pt_BR and so on.  There
-  can be, in the extreme theoretical case, one live package maintainer
-  for each sub-class (language) in this class.
+- The __l10n live packages__ are those which contain the information
+  pertinent to the localization of an internationalized program.  This
+  class have a set of sub-classes that represent human languages:
+  en_US, es_MX, ja_JP, pt_BR and so on.
 
-- The __data live packages__ are that packages that contains whatever
-  sub-class of data do not fit in any other live package class.  This
-  class's sub-classes list is extendable.  Some of its predefined
-  sub-classes are: image, audio, video and database.  One more time,
-  for a given source package, there can be one live package maintainer
-  for each sub-class in this class.  By definition all data that fits
-  in packages of this class are arch-independent.  If there is a
+- The __data live packages__ are those which contain whatever
+  sub-class of data do not fit in any other live package class.  The
+  sub-class list of this class is extendable.  Some of its predefined
+  sub-classes are: _image_, _audio_, _video_ and _database_.  For any
+  given source package there can be one live package maintainer for
+  each of these sub-classes.  By definition all data that fits in
+  packages of this class are arch-independent.  If there is an
   upstream package that builds arch-dependent data, be it executable
-  or not, it will be in a live library or program package as
-  appropriate.
+  or not, it should belong not to _data_ but to a _library_ or
+  _program_ live package as appropriate.
 
-- The __documentation live packages__ are that packages that contains
-  the technical manuals, instruction texts, e-books, tutorials,
-  how-tos, faqs and whatever sort of information that is intended to
-  help users and developers in the use of a program or library.  The
-  sub-classes of this class are the formats that can be generated from
-  the source documentation.  Some possible values are: info, man, txt,
-  html and pdf.  In the extreme theoretical case, for a given source
-  package there will be one live package maintainer for each sub-class
-  in this class.
+- The __documentation live packages__ are those which contain the
+  technical manuals, instruction texts, e-books, tutorials, how-tos,
+  faqs, and whatever sort of information intended to help users and
+  developers in the use of a program or library.  The sub-classes of
+  this class are the formats that can be generated from the source
+  documentation.  Some possible values are: _info_, _man_, _txt_,
+  _html_ and _pdf_.
 
-It is important to emphasize that a live package can pertain to any
-combination of sub-classes and, therefore, of classes too; ranging
-from the singular minimum package that have just one sub-class inside
-only one class, to the maximum package that are built to every
-architecture possible and have every documentation format supported,
-and so on; it is a powerful design and one must use it adequately to
-the distribution specific conventions.
+It is important to emphasize that a live package can theoretically
+pertain to any combination of sub-classes and classes thereof; ranging
+from the minimum package that has just one sub-class inside one class,
+to the maximum one that has been built to every possible architecture
+and holds every documentation format supported, and so on; it is a
+very general design and one must use it adequately conforming to the
+specific conventions of the distribution.
 
 
 
 
-### The Fate of The Knights --- The maintainer's role ###
+### The Fate of The Knights --- The maintainer's role
 
 > ... be brave, be brief, be strong, be gentle
 >
->                 --- Chidragoli, the old sage
+> --- Chidragoli, the old sage
 
 The heavy, technical and centralized work inside a _DragoPKG based
-distribution_ is on source package maintainer's shoulders.  They need
-to get the upstream software and couple it with _DragoPKG meta-data_,
-in particular with a very powerful and handy "build" scripts.  That
-script must know how to generate every meaningful live package
-sub-class from the source package constructed by them.
+distribution_ is on the source package maintainer's shoulders.  They
+need to get the upstream software and couple it with _DragoPKG
+meta-data_; in particular with a very powerful and handy "build"
+script.  That script must be able to generate every meaningful live
+package sub-class from the source package constructed by them.
 
 The _live package maintainers_ represent an important role in the
 process, but their work is not very technical, but rather distributed
@@ -241,65 +244,67 @@ following rhetorical questions:
 
 
 
-## The Universal Divine Flow --- Distribution Mechanics ##
+### The Universal Divine Flow --- Distribution Mechanics
 
-           "... the gods play poker... and drink in the saloon..."
-                                       -- Grado, the drunk beggar
+> ... the gods play poker... and drink in the saloon...
+>
+> --- Grado, the drunk beggar
 
 The following linear chart illustrates the hierarchy of a distribution
-based on DragoPKG.  Square brackets indicate individuals or
-organizations, parenthesis their responsibilities, and lines starting
-with dots, the input and the output of the mid process.
+based on _DragoPKG_.
 
-The Free Software Distribution Pipe
+__The Free Software Distribution Pipeline__
 
-Lower level --- first in time
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-. There is tools to do programming --- no package
-0. [Developer] (to write program source code)
-. There is code --- no package _____________ distribution starts here
-1. [Source Package Maintainer] (to make source package)
-. There is source package ------------------ DragoPKG starts here
-2. [Live Package Maintainer] (to make live package)
-. There is live package __________________ distribution stops here
-3. [User] (to install live packages) -------- DragoPKG stops here
-. There is the user's computing being done
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Higher level --- later in time
+__Lower level --- first in time__
 
-In the first level, DragoPKG cannot help a developer to do his job
-because there is no package, even source packages, to manage yet.
+1. There are tools for programming --- no package
+   - _Developer_ writes program source code
+2. There is code --- no package __(distribution starts here)__
+   - _Source Package Maintainer_ makes source package
+3. There is source package __(DragoPKG starts here)__
+   - _Live Package Maintainer_ makes live packages
+4. There is live packages __(distribution stops here)__
+   - _User_ installs live packages __(DragoPKG stops here)__
+5. The user's computing is being done
 
-In the second level, DragoPKG cannot help the source package maintainer
-because only there will be a source package to manage in the very end
-of the process.
+__Higher level --- later in time__
 
-In the third level, DragoPKG can help the live package maintainer
-generating, from the source package obtained in the end of the
-previous step, a live package that can contain binaries for some
-architecture, headers for developers, documentation for users or some
-architecture independent data for programs, and so on.
+At the __first level__, _DragoPKG_ cannot help a developer to do his
+job because there is no package (not even source packages) to manage
+yet.
 
-In the fourth level, DragoPKG can help the user installing and
+At the __second level__, _DragoPKG_ cannot help the source package
+maintainer because there will be a source package to manage only in
+the very end of the process.
+
+At the __third level__, _DragoPKG_ can help the live package maintainer by
+generating from the source package obtained in the end of the previous
+step a live package that may contain: binaries for some architecture,
+headers for developers, documentation for users or some architecture
+independent data for programs, and so on.
+
+At the __fourth level__, _DragoPKG_ can help the user installing and
 managing the live package obtained from the previous level.
 
-As you can see the DragoPKG is designed to help the two higher levels
-the live package maintainers and the users.  After all, the user and
-its community is the reason to make a free software distribution.
+As you can see the _DragoPKG_ is designed to help at higher levels,
+the live package maintainers and users.  After all, the user and its
+community is the reason to make a free software distribution.
 
 
 
 
-## The Nature of The Unknown --- Package Structure and Meta-data ##
+### The Nature of The Unknown --- Package Structure and Meta-data
 
-"Finally!  Now I know how this dragorian alien machine works!"
-                           -- Hogradstein, the mad scientist
+> Finally!  Now I know how this dragorian alien machine works!
+>
+> --- Hogradstein, the mad scientist
 
-Source and live packages are tar files, with whatever name and
+Source and live packages are `tar` files, with arbitrary name and
 extension, optionally compressed in any format automatically handled
-by tar.  They differ from other common tarballs only by conventions on
-internal files organization.  Basically each of those package are
-divided in two parts: the data and the meta-data.
+by `tar`.  They differ from other common tarballs only by the
+conventions held on the organization of internal files.  Basically
+each of those package are divided in two parts: __data__ and
+__meta-data__.
 
 The data is the actual collection of sources, libraries, programs,
 debugging symbols, headers, l10n catalogs, arch-independent general
@@ -605,11 +610,12 @@ Soon a live package will show up in the current directory.
 
 
 
-## Royalty and Their People --- The System-Administrator and Common Users ##
+### Royalty and Their People --- The System-Administrator and Common Users
 
-        "... Indeed, but my power is conceived to serve my people, not
-         to cause pain by injure of their liberty."
-	                             -- Kirlimim, the righteous king
+> ... Indeed, but my power is conceived to serve my people, not
+> to cause pain by injure of their liberty.
+>
+> --- Kirlimim, the righteous king
 
 DragoPKG distinguishes between two main operation modes to perform
 persistent actions: system-wide and user-based.  This distinction is
@@ -640,10 +646,11 @@ $VARIABLE, where "VARIABLE" is the variable's name.
 
 
 
-## The Treasure Map --- Packages Database Cache ##
+### The Treasure Map --- Packages Database Cache
 
-                       "Buzzzzzzzzzz... buzzzzzzzz... buzzzzzzzz..."
-                                -- Dragonfly, the annoying dragonfly
+> Buzzzzzzzzzz... buzzzzzzzz... buzzzzzzzz...
+>
+> --- Dragonfly, the annoying dragonfly
 
 One important part of a complete package management system is the
 package management itself, and it only becomes possible with a
@@ -721,11 +728,12 @@ database (collection) of meta-data cache directories with that special
 
 
 
-## The Dragorian List --- The User's Connection with Repositories ##
+### The Dragorian List --- The User's Connection to Repositories
 
-      "... all our souls are linked altogether, dragorian-listed to
-      reach the sacred packages..."
-			         -- Niphydracia, the reptilian fairy
+> ... all our souls are linked altogether, dragorian-listed to
+> reach the sacred packages...
+>
+> --- Niphydracia, the reptilian fairy
 
 All information regarding the repositories of source and live packages
 that the system and user can use are stored in a clear text file
@@ -770,11 +778,11 @@ centralized as well.
 
 
 
+### Class of Magic --- Command Line Interface
 
-## Class of Magic --- Command Line Interface ##
-
-                      "Where I put my notes about that incantation?"
-                                     --- Widragordimus, the magician
+> Where did I put my notes about that incantation?
+>
+> --- Widragordimus, the magician
 
 DragoPKG has a standardized command line interface that allows build,
 installation, removal, upgrade and analyze of packages. It has only
